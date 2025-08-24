@@ -1,7 +1,6 @@
 import hero from './hero'
 import activitySection from './activitySection'
 import roomSection from './roomSection'
-import footer from './footer'
 import roomType from './roomType'
 import roomsAndRatesPage from './roomsAndRatesPage'
 import poolAndGardensPage from './poolAndGardensPage'
@@ -37,4 +36,4 @@ import sitemapPage from './sitemapPage'
 import feature from './feature'
 import homePage from './homePage'
 
-export const schemaTypes = [hero, feature, homePage, category, post, blogPage, priceVariant,excursionPrice, excursionGalleryPage, galleryImage, excursionPricesPage, excursion, excursionsPage, pressPage, guestComment, pressReview,eventsPage , roomConfiguration, familiesPage,lunchNonResidentsPage, offersPage, rate, ratesPage, infoCard, offer, menusAndDrinksPage, activitySection, roomSection, diningType, diningPage, roomsAndRatesPage, menuItem, roomType, restaurantAndBarPage, poolAndGardensPage, poolPage, gardenPage, contactPage, sitemapPage]
+export const schemaTypes = [hero, feature, homePage, category, post, blogPage, priceVariant,excursionPrice, excursionGalleryPage, galleryImage, excursionPricesPage, excursion, excursionsPage, pressPage, guestComment, pressReview,eventsPage , roomConfiguration, familiesPage,lunchNonResidentsPage, offersPage, rate, ratesPage, infoCard, offer, menusAndDrinksPage, activitySection, diningType, diningPage, roomsAndRatesPage, menuItem, roomType, restaurantAndBarPage, poolAndGardensPage, poolPage, gardenPage, contactPage, sitemapPage]

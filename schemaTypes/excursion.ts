@@ -80,9 +80,38 @@ export default defineType({
     defineField({
         name: 'gallery',
         title: 'Image Gallery',
-        description: 'Images for the slider on the detail page.',
+        description: 'Images for the slider on the detail page with optional captions.',
         type: 'array',
-        of: [{ type: 'image', options: { hotspot: true } }],
+        of: [{
+            type: 'object',
+            fields: [
+                {
+                    name: 'image',
+                    title: 'Image',
+                    type: 'image',
+                    options: { hotspot: true },
+                    validation: (Rule) => Rule.required(),
+                },
+                {
+                    name: 'caption',
+                    title: 'Caption',
+                    type: 'string',
+                    description: 'Optional caption for this image (will appear on top-left corner of the slider)',
+                }
+            ],
+            preview: {
+                select: {
+                    title: 'caption',
+                    media: 'image',
+                },
+                prepare({ title, media }) {
+                    return {
+                        title: title || 'Image (no caption)',
+                        media,
+                    }
+                }
+            }
+        }],
         validation: (Rule) => Rule.required().min(1),
         group: 'pageContent',
     }),
