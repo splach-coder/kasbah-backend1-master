@@ -36,4 +36,59 @@ import sitemapPage from './sitemapPage'
 import feature from './feature'
 import homePage from './homePage'
 
-export const schemaTypes = [hero, feature, homePage, category, post, blogPage, priceVariant,excursionPrice, excursionGalleryPage, galleryImage, excursionPricesPage, excursion, excursionsPage, pressPage, guestComment, pressReview,eventsPage , roomConfiguration, familiesPage,lunchNonResidentsPage, offersPage, rate, ratesPage, infoCard, offer, menusAndDrinksPage, activitySection, diningType, diningPage, roomsAndRatesPage, menuItem, roomType, restaurantAndBarPage, poolAndGardensPage, poolPage, gardenPage, contactPage, sitemapPage]
+export const schemaTypes = [
+    // Homepage and main sections
+    hero, 
+    feature, 
+    homePage, 
+    category, 
+    post, 
+    blogPage, 
+  
+    // Rooms and accommodations
+    roomsAndRatesPage,
+    roomType, 
+    roomConfiguration,
+    rate, 
+    ratesPage, 
+    familiesPage, 
+    priceVariant, 
+  
+    // Dining & restaurants
+    restaurantAndBarPage, 
+    diningPage, 
+    diningType, 
+    menusAndDrinksPage, 
+    menuItem, 
+    lunchNonResidentsPage, 
+    offersPage, 
+    offer, 
+  
+    // Excursions & activities
+    excursionsPage, 
+    excursion, 
+    excursionPricesPage, 
+    excursionPrice, 
+    excursionGalleryPage, 
+    activitySection, 
+  
+    // Leisure areas
+    poolAndGardensPage, 
+  
+    // Gallery
+    galleryImage, 
+  
+    // Reviews & press
+    guestComment, 
+    pressReview, 
+    pressPage, 
+  
+    // Events
+    eventsPage, 
+  
+    // Info pages
+    infoCard, 
+    contactPage, 
+    sitemapPage
+  ];
+  
