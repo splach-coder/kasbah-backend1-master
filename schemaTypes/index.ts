@@ -35,6 +35,9 @@ import blogPage from './blogPage'
 import sitemapPage from './sitemapPage'
 import feature from './feature'
 import homePage from './homePage'
+import termsPage from './termsPage'
+import legalSection from './objects/legalSection'
+import legalPage from './legalPage'
 
 export const schemaTypes = [
     // Homepage and main sections
@@ -89,6 +92,13 @@ export const schemaTypes = [
     // Info pages
     infoCard, 
     contactPage, 
-    sitemapPage
+    sitemapPage,
+
+    // Terms page
+    termsPage,
+
+    // Privacy page
+    legalSection,
+    legalPage,
   ];
   
