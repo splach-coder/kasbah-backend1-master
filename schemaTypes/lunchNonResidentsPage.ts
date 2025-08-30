@@ -1,100 +1,82 @@
-// /schemas/lunchNonResidentsPage.ts
-
 import {defineField, defineType} from 'sanity'
-import menuItem from './objects/menuItem' 
 
-
-const lunchNonResidentsPage = defineType({
+export default defineType({
   name: 'lunchNonResidentsPage',
-  title: 'Lunch for Non-Residents',
+  title: 'Lunch for Non-Residents Page',
   type: 'document',
   fields: [
-    // --- Internal Title ---
     defineField({
       name: 'title',
-      title: 'Page Title',
+      title: 'Internal Title',
       type: 'string',
-      initialValue: 'Lunch for Non-Residents',
+      initialValue: 'Lunch for Non-Residents Page',
       readOnly: true,
     }),
     
-    // --- Header Section ---
+    // Header & Introduction
     defineField({
       name: 'headerBackgroundImage',
       title: 'Header Background Image',
       type: 'image',
       options: { hotspot: true },
-      fieldset: 'header',
       validation: (Rule) => Rule.required(),
     }),
-
-    // --- Introduction Section ---
     defineField({
         name: 'introduction',
         title: 'Introduction Text',
         type: 'text',
         rows: 4,
-        fieldset: 'introduction',
         validation: (Rule) => Rule.required(),
     }),
     defineField({
         name: 'sellingPoints',
         title: 'Selling Points',
-        description: 'The three key selling points with icons.',
         type: 'array',
         of: [{type: 'string'}],
-        fieldset: 'introduction',
         validation: (Rule) => Rule.required().length(3),
     }),
 
-    // --- Packages Section ---
+    // Packages
     defineField({
         name: 'packages',
         title: 'Special Packages',
         type: 'array',
         of: [{
             type: 'object',
+            name: 'package',
             fields: [
                 defineField({ name: 'title', title: 'Package Title', type: 'string', validation: (Rule) => Rule.required() }),
                 defineField({ name: 'description', title: 'Description', type: 'text', rows: 2, validation: (Rule) => Rule.required() }),
                 defineField({ name: 'price', title: 'Price', type: 'string', validation: (Rule) => Rule.required() }),
-            ],
-            preview: { select: { title: 'title', subtitle: 'price' } }
+            ]
         }],
-        fieldset: 'packages',
-        validation: (Rule) => Rule.required().length(2),
+        validation: (Rule) => Rule.required(),
     }),
 
-    // --- Menu Section ---
+    // Menu Sections
     defineField({
-        name: 'lunchMenuStarters',
-        title: 'Lunch Menu: Starters',
+        name: 'lightDishes',
+        title: 'Lunch Menu: Light Dishes',
         type: 'array',
-        of: [{type: 'menuItem'}],
-        fieldset: 'menu',
+        of: [{type: 'reference', to: [{type: 'menuItem'}]}],
     }),
     defineField({
-        name: 'lunchMenuMains',
-        title: 'Lunch Menu: Main Courses',
+        name: 'salads',
+        title: 'Lunch Menu: Salads',
         type: 'array',
-        of: [{type: 'menuItem'}],
-        fieldset: 'menu',
+        of: [{type: 'reference', to: [{type: 'menuItem'}]}],
     }),
     defineField({
-        name: 'lunchMenuDesserts',
+        name: 'cookedDishes',
+        title: 'Lunch Menu: Cooked Dishes',
+        type: 'array',
+        of: [{type: 'reference', to: [{type: 'menuItem'}]}],
+    }),
+    defineField({
+        name: 'desserts',
         title: 'Lunch Menu: Desserts',
         type: 'array',
-        of: [{type: 'menuItem'}],
-        fieldset: 'menu',
+        of: [{type: 'reference', to: [{type: 'menuItem'}]}],
     }),
   ],
-  // This helps organize the fields in the Sanity Studio
-  fieldsets: [
-    { name: 'header', title: 'Header Section' },
-    { name: 'introduction', title: 'Introduction' },
-    { name: 'packages', title: 'Packages' },
-    { name: 'menu', title: 'Lunch Menu' },
-  ],
 })
-
-export { menuItem, lunchNonResidentsPage } // Exporting the menuItem schema for use in this document

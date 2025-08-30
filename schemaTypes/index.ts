@@ -9,7 +9,8 @@ import gardenPage from './gardenPage'
 import restaurantAndBarPage from './restaurantAndBarPage'
 import diningType from './diningType'
 import diningPage from './diningPage'
-import {lunchNonResidentsPage, menuItem} from './lunchNonResidentsPage'
+import lunchNonResidentsPage from './lunchNonResidentsPage'
+import menuItem from './menuItem'
 import { roomConfiguration, familiesPage } from './familiesPage'
 import menusAndDrinksPage from './menusAndDrinksPage'
 import eventsPage from './eventsPage'
@@ -62,8 +63,8 @@ export const schemaTypes = [
     diningPage, 
     diningType, 
     menusAndDrinksPage, 
-    menuItem, 
-    lunchNonResidentsPage, 
+    lunchNonResidentsPage,
+    menuItem,
     offersPage, 
     offer, 
   
