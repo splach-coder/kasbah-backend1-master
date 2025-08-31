@@ -51,27 +51,7 @@ const familiesPage = defineType({
         validation: (Rule) => Rule.required(),
     }),
 
-    // --- Room Configurations Table ---
-    defineField({
-        name: 'familyRoomConfigurations',
-        title: 'Family Room Configurations',
-        type: 'array',
-        of: [{type: 'roomConfiguration'}],
-        fieldset: 'configurations',
-    }),
-     defineField({
-        name: 'standardSeasonDates',
-        title: 'Standard Season Dates',
-        type: 'string',
-        fieldset: 'configurations',
-    }),
-    defineField({
-        name: 'pricingNotes',
-        title: 'Pricing Notes',
-        type: 'array',
-        of: [{type: 'string'}],
-        fieldset: 'configurations',
-    }),
+
 
     // --- Family Experience Section ---
     defineField({
