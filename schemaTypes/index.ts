@@ -73,14 +73,10 @@ export const schemaTypes = [
     excursion, 
     excursionPricesPage, 
     excursionPrice, 
-    excursionGalleryPage, 
     activitySection, 
   
     // Leisure areas
     poolAndGardensPage, 
-  
-    // Gallery
-    galleryImage, 
   
     // Reviews & press
     guestComment, 
