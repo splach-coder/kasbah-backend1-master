@@ -1,5 +1,6 @@
 import hero from './hero'
 import activitySection from './activitySection'
+import aboutSection from './aboutSection'
 import roomSection from './roomSection'
 import roomType from './roomType'
 import roomsAndRatesPage from './roomsAndRatesPage'
@@ -43,6 +44,7 @@ import legalPage from './legalPage'
 export const schemaTypes = [
     // Homepage and main sections
     hero, 
+    aboutSection,
     feature, 
     homePage, 
     category, 
