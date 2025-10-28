@@ -1,6 +1,4 @@
-// /schemas/ratesPage.ts
-
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'ratesPage',
@@ -15,7 +13,7 @@ export default defineType({
       initialValue: 'Room Rates Page',
       readOnly: true,
     }),
-    
+
     // --- Header Section ---
     defineField({
       name: 'headerBackgroundImage',
@@ -28,60 +26,70 @@ export default defineType({
 
     // --- Standard Season ---
     defineField({
-        name: 'standardSeasonTitle',
-        title: 'Standard Season Title',
-        type: 'string',
-        initialValue: 'Standard Season 2025',
-        fieldset: 'standardSeason',
-        validation: (Rule) => Rule.required(),
+      name: 'standardSeasonTitle',
+      title: 'Standard Season Title',
+      type: 'string',
+      initialValue: 'Standard Season 2025',
+      fieldset: 'standardSeason',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-        name: 'standardSeasonDates',
-        title: 'Standard Season Dates',
-        type: 'string',
-        fieldset: 'standardSeason',
-        validation: (Rule) => Rule.required(),
+      name: 'standardSeasonDates',
+      title: 'Standard Season Dates',
+      type: 'string',
+      fieldset: 'standardSeason',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-        name: 'standardSeasonRates',
-        title: 'Standard Season Rates',
-        type: 'array',
-        of: [{type: 'rate'}],
-        fieldset: 'standardSeason',
+      name: 'standardSeasonRates',
+      title: 'Standard Season Rates',
+      type: 'array',
+      of: [{ type: 'rate' }],
+      fieldset: 'standardSeason',
     }),
 
     // --- High Season ---
     defineField({
-        name: 'highSeasonTitle',
-        title: 'High Season Title',
-        type: 'string',
-        initialValue: 'High Season 2025',
-        fieldset: 'highSeason',
-        validation: (Rule) => Rule.required(),
+      name: 'highSeasonTitle',
+      title: 'High Season Title',
+      type: 'string',
+      initialValue: 'High Season 2025',
+      fieldset: 'highSeason',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-        name: 'highSeasonDates',
-        title: 'High Season Dates',
-        type: 'string',
-        fieldset: 'highSeason',
-        validation: (Rule) => Rule.required(),
+      name: 'highSeasonDates',
+      title: 'High Season Dates',
+      type: 'string',
+      fieldset: 'highSeason',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-        name: 'highSeasonRates',
-        title: 'High Season Rates',
-        type: 'array',
-        of: [{type: 'rate'}],
-        fieldset: 'highSeason',
+      name: 'highSeasonRates',
+      title: 'High Season Rates',
+      type: 'array',
+      of: [{ type: 'rate' }],
+      fieldset: 'highSeason',
     }),
 
     // --- Additional Info Cards ---
     defineField({
-        name: 'additionalInfoCards',
-        title: 'Additional Info Cards',
-        description: 'The cards that appear on the right-hand column.',
-        type: 'array',
-        of: [{type: 'infoCard'}]
-    })
+      name: 'additionalInfoCards',
+      title: 'Additional Info Cards',
+      description: 'The cards that appear on the right-hand column.',
+      type: 'array',
+      of: [{ type: 'infoCard' }],
+    }),
+
+    // --- Rates Disclaimer ---
+    defineField({
+      name: 'ratesDisclaimer',
+      title: 'Rates Disclaimer',
+      type: 'text',
+      description:
+        'Shown below the pricing tables. Example: "Rates in Moroccan dirhams (DH) & pounds (£) are indicative as EUROS ARE THE BASE PRICES..."',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   fieldsets: [
     { name: 'header', title: 'Header Section' },
